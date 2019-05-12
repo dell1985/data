@@ -47,7 +47,7 @@ print(df)
 df = df.infer_objects()
 df.to_csv('data_input/H_good_1.csv')
 df.dtypes
-df.apply(pd.to_numeric, errors='ignore')
+df.apply(pd.to_numeric, errors='ignore',header=None)
 print(df.dtypes)
 print(df.head(100))
 print(df.dtypes)
