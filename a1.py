@@ -42,5 +42,11 @@ print(n)
 n=pd.Series(np.arange(5),index=np.arange(9,14))
 print(n)
 
-n=pd.Series(np.arange(10))
+n=pd.Series(np.arange(10))#查看维度
 print(n)
+print(df.shape)
+print(df.columns)#查看列名
+print(df.info())#查看索引、数据类型、内存信息
+print(df.describe())
+df['持卖仓量']=df['持卖仓量'].str.replace(",","")
+print(df.head(1000))
