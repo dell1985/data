@@ -19,8 +19,12 @@ print(df.info())  # 查看数据类型和内存信息
 # df.drop('合计',axis=1,inplace=True)
 # df = sort_index(axis=0, level=None, ascending=True, inplace=False, kind='quicksort', na_position='last',
 # sort_remaining=True, by=None)
-
-
+df['成交量（手）']=df['成交量（手）'].str.replace(",","")
+df['增减量0']=df['增减量0'].str.replace(",","")
+df['持买仓量']=df['持买仓量'].str.replace(",","")
+df['增减量1']=df['增减量1'].str.replace(",","")
+df['持卖仓量']=df['持卖仓量'].str.replace(",","")
+df['增减量2']=df['增减量2'].str.replace(",","")
 # 改列名称
 new_names = {'日期': '日期', '期货品种': '期货品种', '名次': '名次', '会员简称0': '会员简称', '成交量（手）': '成交量', '增减量0': '增减量', '会员简称1': '会员简称',
              '持买仓量': '持买仓量', '增减量1': '增减量', '会员简称2': '会员简称', '持卖仓量': '持卖仓量', '增减量2': '增减量'}
@@ -44,6 +48,7 @@ df['日期'] = pd.to_datetime(df['日期'])
 # df=pd.DataFrame(df, columns=['名次'])
 df = df[~df['名次'].isin(['合计'])]
 df = df[~df['持卖仓量'].isin(['持卖仓量'])]
+
 # df[['名次', '成交量']] = df[['名次', '成交量']].astype(float)
 print(df)
 df = df.infer_objects()
