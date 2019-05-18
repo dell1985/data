@@ -37,6 +37,7 @@ df = df[~df['持卖仓量'].isin(['持卖仓量'])]
 
 df['日期'] = pd.to_datetime(df['日期'])
 df['名次']= df['名次'].astype(np.int)
+#df['名次']= df['名次'].astype(int),也可以用这个方法
 df['成交量（手）']= df['成交量（手）'].astype(np.int)
 df['增减量0']= df['增减量0'].astype(np.int)
 df['持买仓量']= df['持买仓量'].astype(np.int)
